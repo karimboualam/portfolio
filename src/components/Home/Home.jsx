@@ -1,13 +1,25 @@
-import React from 'react';
-import './Home.scss';
+import React from "react";
+import About from "../About/About";
+import Skills from "../Skills/Skills";
+import Projects from "../Projects/Projects";
+import Contact from "../Contact/Contact";
 
+function Home() {
+  return (
+    <div>
+      {/* About Section */}
+      <About />
 
-const Home=()=>{
-    return (
-        <section className="home">
-            <h1>Welcome to MyPortoflio</h1>
-            <p> This is the Home Page</p>
-        </section>
-    );
-};
+      {/* Skills Section */}
+      <Skills />
+
+      {/* Projects Section */}
+      <Projects />
+
+      {/* Contact Section */}
+      <Contact />
+    </div>
+  );
+}
+
 export default Home;
