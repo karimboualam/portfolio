@@ -9,8 +9,6 @@
         }
       }
     ],
-    "env": {
-      "NODE_VERSION": "18"
-    }
+    "cache": ["node_modules"]
   }
   
