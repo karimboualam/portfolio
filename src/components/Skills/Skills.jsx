@@ -2,7 +2,7 @@ import React from "react";
 import "./Skills.scss";
 
 function Skills() {
-  const skills = ["JavaScript", "React", "Node.js", "Python", "DevOps"];
+  const skills = ["Java", "JavaScript", "React", "Node.js", "Python", "DevOps"];
 
   return (
     <section id="skills" className="skills">
