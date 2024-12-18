@@ -74,14 +74,8 @@ const Contact = () => {
             className="btn"
           >
        
-              <a
-                  href="https://kboualam.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ textDecoration: "none", color: "inherit" }}
-              >
-            Send
-          </a>
+       <a href="#">Send</a>
+
 
           </motion.div>
         </motion.div>
