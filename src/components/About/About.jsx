@@ -44,7 +44,7 @@ const About = () => {
             des Technologies et Sciences, passionné
             par les nouvelles technologies, motivé,
             créatif, et capable de travailler en équipe.
-            Actuellement à la recherche d’un CDI.
+            Actuellement à la recherche d’un CDI en tant que Développeur Full Stack.
           </p>
           {bios.map((bio) => {
             return (
