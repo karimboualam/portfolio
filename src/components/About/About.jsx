@@ -3,7 +3,7 @@ import "./About.scss";
 
 import { motion } from "framer-motion";
 import { bios } from "../../Data/Data";
-import portfolio from "../../assets/images/portfolio.png"; 
+import portfolio from "../../assets/images/Portfolio.png"; 
 
 import cv from "../../assets/Développeur_Full_Stack.pdf";
 
@@ -39,12 +39,11 @@ const About = () => {
           transition={{ duration: 1 }}
         >
           <p>
-            Développeur Web Full Stack récemment
-            diplômé en Informatique et Management
-            des Technologies et Sciences, passionné
-            par les nouvelles technologies, motivé,
-            créatif, et capable de travailler en équipe.
-            Actuellement à la recherche d’un CDI en tant que Développeur Full Stack.
+            Développeur Full Stack Java / Spring Boot et Angular avec plus de 3 ans d’expérience
+sur des projets web à forte valeur ajoutée. Solide expertise en API REST, microservices,
+conteneurisation (Docker, Kubernetes), CI/CD (Jenkins, GitLab) et tests (JUnit, Postman).
+Autonome, rigoureux et à l’aise en équipe agile Scrum, je suis motivé par les projets
+d’envergure dans un environnement stimulant.
           </p>
           {bios.map((bio) => {
             return (
