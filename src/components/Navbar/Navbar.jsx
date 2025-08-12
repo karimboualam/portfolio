@@ -38,13 +38,14 @@ const Navbar = () => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 20);
     });
-  }, []);
+  }, []);/*
   return (
     <motion.div
       initial={{ y: -25 }}
       animate={{ y: -5 }}
       transition={{ duration: 0.5 }}
-      className={scroll ? "header active" : "header"}
+     // className={scroll ? "header active" : "header"}
+      className={scroll ? "navbar active" : "navbar"}
     >
       <div className="Nav_container">
         <div className="logo">
@@ -105,7 +106,70 @@ const Navbar = () => {
         </motion.div>
       </div>
     </motion.div>
-  );
+  );*/
+  return (
+  <motion.div
+    initial={{ y: -25 }}
+    animate={{ y: -5 }}
+    transition={{ duration: 0.5 }}
+    className={scroll ? "navbar active" : "navbar"}
+  >
+    <div className="Nav_container">
+      {/* Logo cliquable à gauche */}
+      <a href="#home" className="brand" aria-label="Accueil">
+        KBLM
+      </a>
+
+      {/* Menu centré */}
+      <ul className="nav_links">
+        {navLinks.map((navlink, index) => (
+          <li key={index}>
+            <a href={`#${navlink}`}>{navlink}</a>
+          </li>
+        ))}
+      </ul>
+
+      {/* Réseaux à droite */}
+      <div className="social_icons">
+        {socialIcons.map((socialIcon, index) => (
+          <div key={index}>
+            <a href={SosLinks[index]} style={{ textDecoration: "none", color: "inherit" }}>
+              {socialIcon}
+            </a>
+          </div>
+        ))}
+      </div>
+
+      {/* Burger mobile */}
+      <div className="menu">
+        <HiMenuAlt4 onClick={() => setToggle(true)} />
+      </div>
+    </div>
+
+    {/* Cercle d’animation + drawer mobile (inchangés) */}
+    <motion.div
+      className="closeMenu"
+      variants={menuVariants}
+      initial="hidden"
+      animate={toggle ? "visible" : "hidden"}
+    />
+    <motion.div
+      variants={navLinkVariants}
+      animate={toggle ? "visible" : "hidden"}
+      className="menuX"
+    >
+      <HiX onClick={() => setToggle(false)} />
+      {navLinks.map((navlink, index) => (
+        <li key={index}>
+          <a href={`#${navlink}`} onClick={() => setToggle(false)}>
+            {navlink}
+          </a>
+        </li>
+      ))}
+    </motion.div>
+  </motion.div>
+);
+
 };
 
 export default Navbar;

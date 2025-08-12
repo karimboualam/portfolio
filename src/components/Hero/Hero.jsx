@@ -1,5 +1,7 @@
 import React from "react";
 import "./Hero.scss";
+//import profile from "../../assets/images/profil-photo.png"; 
+
 
 function Hero() {
   return (
@@ -10,9 +12,10 @@ function Hero() {
         <p>Passionné par le développement et les nouvelles technologies.</p>
         <a href="#projects" className="btn">Voir mes projets</a>
       </div>
-      <div className="hero-image">
-        <img src="/profile-photo.jpg" alt="Karim Boualam" />
-      </div>
+      {/*<div className="hero-image">*/}
+       {/*  <img src="/profile-photo.jpg" alt="Karim Boualam" /> */}
+      {/*   <img src={profile} alt="Karim Boualam" />   {/* ✅ */}
+     {/*   </div>*/}
     </div>
   );
 }

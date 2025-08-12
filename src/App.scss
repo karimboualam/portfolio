@@ -46,3 +46,12 @@ img {
       font-size: 2.5rem;
   }
 }
+
+
+
+:root { --navbar-h: 72px; }   /* même valeur que dans Navbar.scss */
+
+body { padding-top: var(--navbar-h); }
+
+/* Les ancres (#about, #projects, …) ne seront plus cachées sous la navbar */
+[id] { scroll-margin-top: var(--navbar-h); }

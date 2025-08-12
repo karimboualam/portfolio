@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Hero /> 
+    {/* <Hero /> */}
       <Home /> 
       <Footer />
       {/* <header className="App-header">
