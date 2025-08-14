@@ -1,24 +1,21 @@
 const nodemailer = require("nodemailer");
+const isEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(s||"").trim());
 
 module.exports = async (req, res) => {
   try {
-    if (req.method !== "POST") {
-      return res.status(405).json({ ok: false, error: "Method not allowed" });
-    }
+    if (req.method !== "POST") return res.status(405).json({ ok:false, error:"Method not allowed" });
 
     const body = typeof req.body === "string" ? JSON.parse(req.body) : (req.body || {});
     const { firstName, lastName, phone, email, message } = body;
 
-    if (!firstName || !email || !message) {
-      return res.status(400).json({ ok: false, error: "Missing required fields" });
-    }
+    if (!firstName || !email || !message) return res.status(400).json({ ok:false, error:"Missing required fields" });
+    if (!isEmail(email))        return res.status(400).json({ ok:false, error:"Invalid email" });
 
-    // Vérif env (évite les 500 silencieux)
-    const required = ["SMTP_HOST","SMTP_PORT","SMTP_USER","SMTP_PASS","SMTP_FROM","SMTP_TO"];
-    const missing = required.filter(k => !process.env[k]);
-    if (missing.length) {
-      console.error("[api/contact] missing env:", missing);
-      return res.status(500).json({ ok:false, error:`Missing env: ${missing.join(", ")}` });
+    const need = ["SMTP_HOST","SMTP_PORT","SMTP_USER","SMTP_PASS","SMTP_FROM","SMTP_TO"];
+    const miss = need.filter(k => !process.env[k]);
+    if (miss.length) {
+      console.error("[api/contact] missing env:", miss);
+      return res.status(500).json({ ok:false, error:`Missing env: ${miss.join(", ")}` });
     }
 
     const transporter = nodemailer.createTransport({
@@ -28,11 +25,13 @@ module.exports = async (req, res) => {
       auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
     });
 
+    // (optionnel) vérifie la connexion SMTP
+    await transporter.verify().catch(e => console.error("[api/contact] verify:", e));
+
     const fullName = `${firstName}${lastName ? " " + lastName : ""}`;
-    await transporter.sendMail({
+    const mail = {
       from: `"Portfolio" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
       to: process.env.SMTP_TO,
-      replyTo: email,
       subject: `Nouveau message de ${fullName}`,
       text: [
         `De: ${fullName}`,
@@ -40,13 +39,15 @@ module.exports = async (req, res) => {
         `Téléphone: ${phone || "-"}`,
         "",
         "Message:",
-        message
+        message,
       ].join("\n"),
-    });
+    };
+    if (isEmail(email)) mail.replyTo = email;
 
-    return res.status(200).json({ ok: true });
+    await transporter.sendMail(mail);
+    return res.status(200).json({ ok:true });
   } catch (e) {
     console.error("[api/contact] error:", e);
-    return res.status(500).json({ ok:false, error: String(e && e.message || e) });
+    return res.status(500).json({ ok:false, error:"Email failed" });
   }
 };
