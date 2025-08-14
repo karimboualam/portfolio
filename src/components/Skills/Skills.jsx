@@ -7,7 +7,7 @@ import {
   SiGitlab, SiGithub, SiSwagger, SiSonarqube, SiJira,
   SiIntellijidea, SiFigma, SiUml
 } from "react-icons/si";
-// ...existing code...
+
 import { TbBrandVscode, TbBrandVisualStudio } from "react-icons/tb"; // ⬅️ add this
 
 const ICONS = {
