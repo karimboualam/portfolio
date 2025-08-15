@@ -5,9 +5,8 @@
     { "src": "api/**/*.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "^/api/(.*)$", "dest": "/api/$1" },               // API
-    { "src": "^(?!/api/)(.*\\..*)$", "dest": "/$1" },          // laisser passer les fichiers (js, css, png…)
-    { "src": "^(?!/api/).*$", "dest": "/index.html" }          // SPA fallback
+    { "src": "^/api/(.*)$", "dest": "/api/$1" },               
+    { "src": "^(?!/api/)(.*\\..*)$", "dest": "/$1" },          
+    { "src": "^(?!/api/).*$", "dest": "/index.html" }          
   ]
 }
-s
