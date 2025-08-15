@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   
-  "engines": { "node": "18.x" },
+  "engines": { "node": "22.x" },
   "proxy": "http://localhost:5000",
   "dependencies": {
     "@babel/preset-env": "^7.26.0",
