@@ -4,9 +4,33 @@ import { FiGithub, FiExternalLink, FiCalendar, FiTag, FiCheck } from "react-icon
 import styles from "./Projects.module.scss";
 
 const ALL = "All";
-const FILTERS = [ALL, "Web", "Web/ML", "Data", "Desktop"];
+const FILTERS = [ALL, "Web", "Web/ML", "Data", "Desktop", "Mobile"];
 
-const projects = [
+ const projects = [
+  // projet mobile freelance
+  {
+    name: "Application mobile anti-gaspillage alimentaire",
+    period: "05/2024–08/2025",
+    type: "Mobile",
+    description:
+      "App inspirée de Too Good To Go : les commerçants proposent des paniers d’invendus et les clients les réservent à prix réduit.",
+    stack: [
+      "Flutter", "Dart",
+      "Firebase Auth", "Cloud Firestore", "Cloud Storage", "Cloud Functions",
+      "Google Maps API"
+    ],
+    highlights: [
+      "Architecture modulaire (Provider)",
+      "Auth multi-méthodes + rôles (Google, Apple, invité, e-mail/mdp)",
+      "Gestion des paniers (création, modification, réservation, validation, suppression)",
+      "Géolocalisation & cartes",
+      "Cloud Functions : purge auto des paniers expirés + images associées",
+      "Optimisation UI/UX Android & iOS"
+    ],
+    github: "https://github.com/karimboualam",  
+    demo: ""                                     
+  },
+   // projet ASFA Freelance  
   {
     name: "Gestion d’adhésions & dossiers obsèques (Assfa)",
     period: "2024–2025",
