@@ -5,43 +5,58 @@ import {
   SiSpring, SiAngular, SiTypescript, SiJavascript, SiNodedotjs, SiFlask, SiDjango,
   SiPostgresql, SiMysql, SiMongodb, SiKubernetes,
   SiGitlab, SiGithub, SiSwagger, SiSonarqube, SiJira,
-  SiIntellijidea, SiFigma, SiUml
+  SiIntellijidea, SiFigma, SiUml,
+  // nouveaux
+  SiFlutter, SiDart, SiFirebase, SiGooglemaps,
 } from "react-icons/si";
-
-import { TbBrandVscode, TbBrandVisualStudio } from "react-icons/tb"; // ⬅️ add this
+import { TbBrandVscode, TbBrandVisualStudio } from "react-icons/tb";
 
 const ICONS = {
   Java: <FaJava />, "Spring Boot": <SiSpring />, Angular: <SiAngular />, React: <FaReact />,
   TypeScript: <SiTypescript />, JavaScript: <SiJavascript />, Python: <FaPython />, "C#": "💻",
   "Node.js": <SiNodedotjs />, Flask: <SiFlask />, Django: <SiDjango />, JavaFX: "🖥️",
+
   MySQL: <SiMysql />, PostgreSQL: <SiPostgresql />, MongoDB: <SiMongodb />, "SQL Server": "🗄️",
+
   Docker: <FaDocker />, Kubernetes: <SiKubernetes />, "GitLab CI/CD": <SiGitlab />, "Azure DevOps": "☁️",
   Git: <FaGit />, GitHub: <SiGithub />, Jenkins: <FaJenkins />, Postman: "🧪",
   Swagger: <SiSwagger />, SonarQube: <SiSonarqube />, Jira: <SiJira />,
+
   "IntelliJ IDEA": <SiIntellijidea />, "VS Code": <TbBrandVscode />, "Visual Studio": <TbBrandVisualStudio />, Figma: <SiFigma />,
   UML: <SiUml />, "API Gateway": "🔀", Linux: "🐧", Windows: "🪟", Scrum: "⚡", SAFe: "📈", TDD: "✅", Kanban: "🗂️", Merise: "📐",
+
+  // nouveaux (même pictogramme Firebase pour les services)
+  Dart: <SiDart />,
+  Flutter: <SiFlutter />,
+  "Firebase Auth": <SiFirebase />,
+  "Cloud Firestore": <SiFirebase />,
+  "Cloud Storage": <SiFirebase />,
+  "Cloud Functions": <SiFirebase />,
+  "Google Maps API": <SiGooglemaps />,
 };
 
 const skillGroups = [
   {
     title: "Langages",
-    items: ["Java", "TypeScript", "JavaScript", "Python", "C#"],
+    items: ["Java", "TypeScript", "JavaScript", "Python", "C#", "Dart"],
   },
   {
     title: "Frameworks & Runtimes",
-    items: ["Spring Boot", "Angular", "React", "Node.js", "Flask", "Django", "JavaFX"],
+    items: ["Spring Boot", "Angular", "React", "Node.js", "Flask", "Django", "JavaFX", "Flutter"],
   },
   {
     title: "Bases de données",
-    items: ["MySQL", "PostgreSQL", "MongoDB", "SQL Server"],
+    items: ["MySQL", "PostgreSQL", "MongoDB", "SQL Server", "Cloud Firestore"],
   },
   {
     title: "DevOps & Cloud",
-    items: ["Docker", "Kubernetes", "GitLab CI/CD", "Azure DevOps", "API Gateway", "Jenkins"],
+    items: ["Docker", "Kubernetes", "GitLab CI/CD", "Azure DevOps", "API Gateway", "Jenkins",
+            "Firebase Auth", "Cloud Storage", "Cloud Functions"],
   },
   {
     title: "Outils",
-    items: ["Git", "GitHub", "Postman", "Swagger", "SonarQube", "IntelliJ IDEA", "VS Code", "Visual Studio", "Figma", "Jira"],
+    items: ["Git", "GitHub", "Postman", "Swagger", "SonarQube", "IntelliJ IDEA", "VS Code",
+            "Visual Studio", "Figma", "Jira", "Google Maps API"],
   },
   {
     title: "Méthodes & Systèmes",
