@@ -178,7 +178,7 @@ import {
     {
       id: 3,
       icon: <FaPhoneAlt />,
-      infoText: "076686648",
+      infoText: "076686647",
     },
   ];
   

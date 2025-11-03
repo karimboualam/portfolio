@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { bios } from "../../Data/Data";
 import portfolio from "../../assets/images/Portfolio.png"; 
 
-import cv from "../../assets/Développeur_Full_Stack.pdf";
+import cv from "../../assets/Ingenieur-Full-Stack_DevOps.pdf";
 
 const About = () => {
   return (

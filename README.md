@@ -81,7 +81,7 @@ Badges rapides :
 
 ## 📄 CV
 
-- **CV (PDF)** : [`src/assets/Développeur_Full_Stack.pdf`](src/assets/D%C3%A9veloppeur_Full_Stack.pdf)  
+- **CV (PDF)** : [`src/assets/Ingenieur-Full-Stack_DevOps.pdf`](src/assets/Ingenieur-Full-Stack_DevOps.pdf)  
 - Profil complet et expériences détaillées : **kboualam.com**
 
 ---
